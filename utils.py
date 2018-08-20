@@ -30,4 +30,5 @@ def prepro(feats, labels, norm):
 	
 	return feats, labels
 
-	
+_, _, l, _ = read_dataset('data.csv', True)
+print(np.sum(l, axis = 0))

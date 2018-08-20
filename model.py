@@ -17,7 +17,7 @@ def cnn_model():
 	
 	# CNN
 	# 1
-	model.add(Conv2D(128, 3, padding = 'same', activation = 'relu', input_shape = (48, 48, 1)))
+	model.add(Conv2D(128, 5, padding = 'same', activation = 'relu', input_shape = (48, 48, 1)))
 	model.add(MaxPooling2D(pool_size = (2, 2)))
 	model.add(Dropout(dr))
 	# 2
@@ -35,7 +35,7 @@ def cnn_model():
 
 	# DNN
 	model.add(Flatten())
-	model.add(Dense(16))
+	model.add(Dense(32))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
 	model.add(Dense(nb_class))
@@ -49,13 +49,16 @@ def dnn_model():
 	
 	# DNN
 	model.add(Flatten(input_shape = (48, 48, 1)))
-	model.add(Dense(256))
+	model.add(Dense(512))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
 	model.add(Dense(128))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
-	model.add(Dense(64))
+	model.add(Dense(128))
+	model.add(Activation('relu'))
+	model.add(Dropout(dr))
+	model.add(Dense(32))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
 	model.add(Dense(32))

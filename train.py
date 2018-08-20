@@ -15,7 +15,7 @@ def main():
 	tpath = 'data.csv'
 	norm = True
 	batch = 32
-	epoch = 5
+	epoch = 50
 	vs = 0.05
 
 	# load data	

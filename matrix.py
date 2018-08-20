@@ -57,7 +57,7 @@ def main():
 	conf_mat = confusion_matrix(te_labels, predictions)
 	plt.figure()
 	plot_confusion_matrix(conf_mat, classes = ["Angry","Disgust","Fear","Happy","Sad","Surprise","Neutral"])
-	plt.savefig('confusion_matrix.png')
+	plt.savefig('confusion_matrix_'+mode+'.png')
 
 if __name__ == '__main__':
 	main()
