@@ -15,16 +15,16 @@ def main():
 		exit()
 	
 	# set parameters
+	# TODO choose good numbers of batch size and epoch
 	batch = 32
-	epoch = 100
+	epoch = 20
 
 	# load data	
 	tr_feats, te_feats, tr_labels, te_labels = read_dataset()
 	
 	# data augmentation
-	augment_gen = ImageDataGenerator(rotation_range = 5, width_shift_range = 0.1, 
-	height_shift_range = 0.1, zoom_range = 0.1, horizontal_flip = True,
-	shear_range = 0.1, fill_mode = 'constant')
+	# TODO set up the parameters for 'ImageDataGenerator'
+	augment_gen = ImageDataGenerator()
 	origin_gen = ImageDataGenerator()
 	
 	# build model
