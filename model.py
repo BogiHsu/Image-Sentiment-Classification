@@ -19,8 +19,8 @@ def cnn_model():
 
 	# CNN
 	# 1
-	model.add(Conv2D(16, 3, padding = 'same', activation = 'relu', input_shape = (48, 48, 1)))
-	model.add(MaxPooling2D(pool_size = (2, 2)))
+	model.add(Conv2D(1, 1, input_shape = (48, 48, 1)))
+	model.add(MaxPooling2D(pool_size = (1, 1)))
 	model.add(Dropout(dr))
 
 	# DNN
