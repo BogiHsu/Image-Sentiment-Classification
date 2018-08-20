@@ -1,8 +1,7 @@
 from keras.optimizers import Adam
 from keras.models import Sequential
-from keras.callbacks import Callback
 from keras.layers import Conv2D, MaxPooling2D
-from keras.layers import Input, Dense, Dropout, Flatten, Activation
+from keras.layers import Dense, Dropout, Flatten, Activation
 # TODO choose a good dropout rate
 dr = 0.
 nb_class = 7
