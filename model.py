@@ -19,7 +19,7 @@ def cnn_model():
 
 	# CNN
 	# 1
-	model.add(Conv2D(1, 1, input_shape = (48, 48, 1)))
+	model.add(Conv2D(16, 2, input_shape = (48, 48, 1)))
 	model.add(MaxPooling2D(pool_size = (1, 1)))
 	model.add(Dropout(dr))
 
@@ -36,13 +36,13 @@ def dnn_model():
 	
 	# DNN
 	model.add(Flatten(input_shape = (48, 48, 1)))
-	model.add(Dense(256))
+	model.add(Dense(128))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
-	model.add(Dense(256))
+	model.add(Dense(64))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
-	model.add(Dense(256))
+	model.add(Dense(16))
 	model.add(Activation('relu'))
 	model.add(Dropout(dr))
 	model.add(Dense(nb_class))
