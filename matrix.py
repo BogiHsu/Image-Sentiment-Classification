@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from utils import *
 from sklearn.metrics import confusion_matrix
+np.random.seed(0)
 
 def plot_confusion_matrix(cm, classes,title='Confusion matrix',cmap=plt.cm.jet):
 	"""
@@ -36,12 +37,8 @@ def main():
 		print('Error: Model mode not found')
 		exit()
 
-	# set parameters
-	tpath = 'data.csv'
-	div = True
-
 	# load data	
-	_, te_feats, _, te_labels = read_dataset(tpath, div)
+	_, te_feats, _, te_labels = read_dataset()
 	
 	# load model
 	emotion_classifier = model.build_model(mode)
