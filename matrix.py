@@ -41,10 +41,11 @@ def main():
 	_, te_feats, _, te_labels = read_dataset()
 	
 	# load model
-	# TODO load your model here
-
+	emotion_classifier = model.build_model(mode)
+	emotion_classifier.load_weights(mode+'.h5')
+	
 	# predict
-	# TODO use 'predictions = your_model.predict_classes(te_feats)' to get predictions
+	predictions = emotion_classifier.predict_classes(te_feats)
 	
 	# one-hot to int
 	te_labels = np.argmax(te_labels, axis = -1)

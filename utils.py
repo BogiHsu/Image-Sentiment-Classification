@@ -13,8 +13,8 @@ def read_dataset(tpath = 'data.csv', norm = True, balance = True):
 			label, feat = line.split(',')
 			feat = np.fromstring(feat, dtype = int, sep = ' ')
 			feat = np.reshape(feat, (48, 48, 1))
-			datas.append((feat,int(label)))
-	feats,labels = zip(*datas)
+			datas.append((feat, int(label)))
+	feats, labels = zip(*datas)
 	feats, labels = prepro(feats, labels, norm, balance)
 
 	return train_test_split(feats, labels, test_size = 0.1, random_state = 0)
